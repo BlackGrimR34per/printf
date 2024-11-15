@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   src.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 23:12:01 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/15 17:51:18 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/15 21:04:27 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
-int	ft_strlen(char *str);
+char	*ft_itoa(int n);
+int		ft_putchar(char c);
+int		ft_putnbr(int nbr);
+int		ft_putstr(char *str);
+int		ft_strlen(char *str);
 
 #endif

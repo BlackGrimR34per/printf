@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 17:50:51 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/15 21:36:38 by yosherau         ###   ########.fr       */
+/*   Created: 2024/11/15 21:15:01 by yosherau          #+#    #+#             */
+/*   Updated: 2024/11/15 21:20:24 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src.h"
+// int	ft_puthex(int nbr)
+// {
+// 	char	*hex_bases[2];
 
-int	ft_putnbr(int nbr)
-{
-	char	*str;
-	int		length;
+// 	hex_bases[0] = "0123456789abcdef";
+// 	hex_bases[1] = "0123456789ABCDEF";
 
-	str = ft_itoa(nbr);
-	length = ft_strlen(str);
-	write(1, str, length);
-	free (str);
-	return (length);
-}
+	
+// }
