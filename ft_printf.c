@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:57:47 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/15 21:14:07 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:19:06 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ int	ft_handle_specifier(char c, va_list ap)
 	if (c == 'u')
 		return (ft_putnbr(va_arg(ap, unsigned int)));
 	if (c == 'x')
-		return (ft_puthex(va))
+		return (ft_puthex(va_arg(ap, int), 0));
+	if (c == 'X')
+		return (ft_puthex(va_arg(ap, int), 1));
+	if (c == '%')
+		return (ft_putchar('%'));
 }
 
 int	ft_printf(const char *format, ...)
