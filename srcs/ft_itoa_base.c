@@ -6,13 +6,13 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:17:11 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 19:04:33 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:43:47 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src.h"
+#include "srcs.h"
 
-static size_t	ft_nb_len(int n, int divisor)
+static size_t	ft_nb_len(long long int n, int divisor)
 {
 	size_t	len;
 
@@ -32,7 +32,7 @@ static size_t	ft_nb_len(int n, int divisor)
 	return (len);
 }
 
-char	*ft_itoa_base(int n, char *base)
+char	*ft_itoa_base(long long int n, char *base)
 {
 	int		nbr_len;
 	int		base_len;

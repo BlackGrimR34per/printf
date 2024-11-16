@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:50:51 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/15 21:36:38 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:43:59 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src.h"
+#include "srcs.h"
 
 int	ft_putnbr(int nbr)
 {

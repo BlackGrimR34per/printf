@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:54:23 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/15 20:55:17 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:43:48 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src.h"
+#include "srcs.h"
 
 static size_t	ft_nb_len(int n)
 {

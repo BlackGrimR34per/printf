@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 19:08:46 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 19:12:53 by yosherau         ###   ########.fr       */
+/*   Created: 2024/11/16 18:29:24 by yosherau          #+#    #+#             */
+/*   Updated: 2024/11/16 18:41:54 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src.h"
+// #include "ft_printf.h"
 
-int	main(void)
-{
-	ft_puthex(19, 0);
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_printf(NULL);
+// 	return (0);
+// }

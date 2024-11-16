@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_putaddress.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 21:15:01 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 16:43:57 by yosherau         ###   ########.fr       */
+/*   Created: 2024/11/16 15:52:37 by yosherau          #+#    #+#             */
+/*   Updated: 2024/11/16 16:43:55 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-int	ft_puthex(int nbr, int selector)
+int	ft_putaddress(void *ptr)
 {
-	char	*hex_bases[2];
-	char	*str;
-	int		length;
+	char			*hex_base;
+	char			*str;
+	int				length;
+	unsigned long	address;
 
-	hex_bases[0] = "0123456789abcdef";
-	hex_bases[1] = "0123456789ABCDEF";
-	str = ft_itoa_base(nbr, hex_bases[selector]);
+	address = (unsigned long)ptr;
+	hex_base = "0123456789abcdef";
+	str = ft_itoa_base(address, hex_base);
+	ft_putstr("0x");
 	length = ft_putstr(str);
 	free (str);
-	return (length);
+	return (length + 2);
 }

@@ -6,11 +6,11 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 23:20:58 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/15 17:51:05 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/16 16:44:01 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src.h"
+#include "srcs.h"
 
 int	ft_putstr(char *str)
 {

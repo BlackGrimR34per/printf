@@ -5,46 +5,35 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/16 18:13:12 by yosherau          #+#    #+#              #
-#    Updated: 2024/11/16 18:28:12 by yosherau         ###   ########.fr        #
+#    Created: 2024/11/16 16:33:22 by yosherau          #+#    #+#              #
+#    Updated: 2024/11/16 18:50:35 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libftprintf.a
+NAME	=	libsrcs.a
 
-CC			=	CC
-CFLAGS		=	-Wall -Wextra -Werror
+SRCS	=	ft_itoa_base.c ft_itoa.c ft_putaddress.c ft_putchar.c ft_puthex.c \
+			ft_putnbr.c ft_putstr.c ft_strlen.c
 
-RM			=	rm -f
+OBJS	=	$(SRCS:.c=.o)
 
-SRCS		=	ft_printf.c
+CC		=	cc
+CFLAGS	=	-Wall -Wextra -Werror
 
-LIBSRCS_DIR	=	./srcs
-LIBSRCS		=	$(LIBSRCS_DIR)/libsrcs.a
+RM		=	rm -f
 
-OBJS		=	$(SRCS:.c=.o)
+all:		$(NAME)
 
-all:			$(NAME)
+$(NAME):	$(OBJS)
+			ar rcs $(NAME) $(OBJS)
 
-$(NAME):		$(OBJS) $(LIBSRCS)
-				cp $(LIBSRCS) .
-				ar -x libsrcs.a
-				ar rcs $(NAME) $(OBJS) *.o
-				$(RM) libsrcs.a
-				$(RM) *.o
-
-$(LIBSRCS):
-				$(MAKE) -C $(LIBSRCS_DIR)
-
-$(OBJS):		$(SRCS)
-				$(CC) $(CFLAGS) -c $^
-				$(MAKE) -C $(LIBSRCS_DIR) clean
+$(OBJS):	$(SRCS)
+			$(CC) $(CFLAGS) -c $^
 
 clean:
-				$(RM) $(OBJS)
+			$(RM) $(OBJS)
 
-fclean:			clean
-				$(RM) $(NAME)
-				$(MAKE) -C $(LIBSRCS_DIR) fclean
+fclean:		clean
+			$(RM) $(NAME)
 
-re:				$(NAME) fclean
+re:			fclean $(NAME)
