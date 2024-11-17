@@ -6,13 +6,13 @@
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 18:13:12 by yosherau          #+#    #+#              #
-#    Updated: 2024/11/16 18:28:12 by yosherau         ###   ########.fr        #
+#    Updated: 2024/11/16 18:57:15 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libftprintf.a
 
-CC			=	CC
+CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror
 
 RM			=	rm -f

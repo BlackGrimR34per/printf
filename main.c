@@ -6,14 +6,14 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 18:29:24 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 18:41:54 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:24:21 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ft_printf.h"
+#include "ft_printf.h"
 
-// int	main(void)
-// {
-// 	ft_printf(NULL);
-// 	return (0);
-// }
+int	main(void)
+{
+	ft_printf("%s", "");
+	return (0);
+}
