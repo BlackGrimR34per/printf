@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:15:01 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 16:43:57 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/17 21:00:51 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-int	ft_puthex(int nbr, int selector)
+int	ft_puthex(long nbr, int selector)
 {
 	char	*hex_bases[2];
 	char	*str;

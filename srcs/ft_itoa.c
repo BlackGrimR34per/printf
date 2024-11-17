@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:54:23 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 16:43:48 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:00:10 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-static size_t	ft_nb_len(int n)
+static size_t	ft_nb_len(long n)
 {
 	size_t	len;
 
@@ -32,7 +32,7 @@ static size_t	ft_nb_len(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	int		nbr_len;
 	char	*output;

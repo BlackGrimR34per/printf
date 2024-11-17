@@ -1,6 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
+/*   ft_itoa_base_unsigned.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/17 19:00:39 by yosherau          #+#    #+#             */
+/*   Updated: 2024/11/17 19:02:48 by yosherau         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
@@ -12,7 +24,7 @@
 
 #include "srcs.h"
 
-static size_t	ft_nb_len(long n, int divisor)
+static size_t	ft_nb_len(unsigned long n, int divisor)
 {
 	size_t	len;
 
@@ -32,12 +44,12 @@ static size_t	ft_nb_len(long n, int divisor)
 	return (len);
 }
 
-char	*ft_itoa_base(long n, char *base)
+char	*ft_itoa_base_unsigned(unsigned long n, char *base)
 {
-	int		nbr_len;
-	int		base_len;
-	char	*output;
-	long	nbr;
+	int				nbr_len;
+	int				base_len;
+	char			*output;
+	unsigned long	nbr;
 
 	nbr = n;
 	base_len = ft_strlen(base);
