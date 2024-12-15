@@ -6,7 +6,7 @@
 /*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:52:37 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/15 22:46:24 by ysheraun         ###   ########.fr       */
+/*   Updated: 2024/12/15 23:16:44 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static char	*ft_itoa_base_pos(unsigned long n, char *base)
 	return (output);
 }
 
-
 int	ft_putaddress(void *ptr)
 {
 	char			*hex_base;
@@ -65,8 +64,7 @@ int	ft_putaddress(void *ptr)
 		return (ft_strlen(THE_ABSENCE_OF_VALUE));
 	}
 	address = (unsigned long)ptr;
-	hex_base = "0123456789abcdef";
-	str = ft_itoa_base_pos(address, hex_base);
+	str = ft_itoa_base_pos(address, LOWERCASE_HEX);
 	ft_putstr("0x");
 	length = ft_putstr(str);
 	free (str);

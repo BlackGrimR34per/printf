@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:57:47 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/15 09:26:34 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/15 23:06:44 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-#include <stdio.h>
 
 int	ft_handle_specifier(char c, va_list *ap)
 {

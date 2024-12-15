@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:15:01 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/15 14:55:24 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/15 23:15:23 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ static char	*ft_itoa_base_pos(unsigned int n, char *base)
 
 int	ft_puthex(unsigned int nbr, int selector)
 {
-	char	*hex_bases[2];
 	char	*str;
 	int		length;
 
-	hex_bases[0] = "0123456789abcdef";
-	hex_bases[1] = "0123456789ABCDEF";
-	str = ft_itoa_base_pos(nbr, hex_bases[selector]);
+	if (selector == 0)
+		str = ft_itoa_base_pos(nbr, LOWERCASE_HEX);
+	else
+		str = ft_itoa_base_pos(nbr, UPPERCASE_HEX);
 	length = ft_putstr(str);
 	free (str);
 	return (length);
