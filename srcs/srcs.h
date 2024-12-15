@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   srcs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 23:12:01 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/14 20:32:52 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/15 22:39:36 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# ifdef __APPLE__
+#  define THE_ABSENCE_OF_VALUE "0x0"
+# elif __linux__
+#  define THE_ABSENCE_OF_VALUE "(nil)"
+# endif
 
 char	*ft_itoa_base(long long n, char *base);
 char	*ft_itoa(long n);

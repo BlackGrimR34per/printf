@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:00:27 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/11 12:54:20 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/15 22:38:47 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "./srcs/srcs.h"
-
-# ifdef __APPLE__
-#  define THE_ABSENCE_OF_VALUE "(NULL)"
-# endif
 
 # define STD_OUT 1
 # define LOWERCASE_SELECTOR 0
