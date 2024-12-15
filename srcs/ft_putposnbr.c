@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putposnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 18:00:27 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/11 12:54:20 by yosherau         ###   ########.fr       */
+/*   Created: 2024/12/14 19:48:36 by yosherau          #+#    #+#             */
+/*   Updated: 2024/12/14 19:48:53 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "srcs.h"
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "./srcs/srcs.h"
+int	ft_putposnbr(unsigned int nbr)
+{
+	char	*str;
+	int		length;
 
-# ifdef __APPLE__
-#  define THE_ABSENCE_OF_VALUE "(NULL)"
-# endif
-
-# define STD_OUT 1
-# define LOWERCASE_SELECTOR 0
-# define UPPERCASE_SELECTOR 1
-
-int	ft_printf(const char *format, ...);
-
-#endif
+	str = ft_itoa(nbr);
+	length = ft_strlen(str);
+	write(1, str, length);
+	free (str);
+	return (length);
+}

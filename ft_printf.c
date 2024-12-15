@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 17:57:47 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/17 21:03:16 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/15 09:26:34 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+#include <stdio.h>
 
 int	ft_handle_specifier(char c, va_list *ap)
 {
@@ -25,11 +27,11 @@ int	ft_handle_specifier(char c, va_list *ap)
 	if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(*ap, int)));
 	if (c == 'u')
-		return (ft_putnbr(va_arg(*ap, unsigned int)));
+		return (ft_putposnbr(va_arg(*ap, unsigned int)));
 	if (c == 'x')
-		return (ft_puthex(va_arg(*ap, unsigned int), LOWERCASE_SELECTOR));
+		return (ft_puthex(va_arg(*ap, int), LOWERCASE_SELECTOR));
 	if (c == 'X')
-		return (ft_puthex(va_arg(*ap, unsigned int), UPPERCASE_SELECTOR));
+		return (ft_puthex(va_arg(*ap, int), UPPERCASE_SELECTOR));
 	if (c == '%')
 		return (ft_putchar('%'));
 	else
@@ -41,8 +43,6 @@ int	ft_printf(const char *format, ...)
 	va_list	ap;
 	int		count;
 
-	if (format == NULL)
-		return (-1);
 	count = 0;
 	va_start(ap, format);
 	while (*format)
