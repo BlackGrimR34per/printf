@@ -6,7 +6,7 @@
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:52:37 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/14 19:33:26 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/15 14:53:02 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ static size_t	ft_nb_len(unsigned long int n, int divisor)
 	size_t	len;
 
 	len = 0;
-	if (n < 0)
-	{
-		len++;
-		n *= -1;
-	}
 	if (n == 0)
 		len++;
 	while (n != 0)
@@ -45,8 +40,6 @@ static char	*ft_itoa_base_pos(unsigned long n, char *base)
 	output = (char *)malloc(sizeof(char) * (nbr_len + 1));
 	if (!output)
 		return (0);
-	if (nbr < 0)
-		nbr = nbr * -1;
 	output[nbr_len--] = '\0';
 	while (nbr > 0)
 	{
@@ -55,8 +48,6 @@ static char	*ft_itoa_base_pos(unsigned long n, char *base)
 	}
 	if (n == 0)
 		output[nbr_len] = '0';
-	if (n < 0)
-		output[nbr_len] = '-';
 	return (output);
 }
 
