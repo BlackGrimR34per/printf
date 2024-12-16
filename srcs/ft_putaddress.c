@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putaddress.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:52:37 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/15 23:16:44 by ysheraun         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:13:35 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ static char	*ft_itoa_base_pos(unsigned long n, char *base)
 
 int	ft_putaddress(void *ptr)
 {
-	char			*hex_base;
 	char			*str;
 	int				length;
 	unsigned long	address;

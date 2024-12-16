@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
+#    By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 16:33:22 by yosherau          #+#    #+#              #
-#    Updated: 2024/12/14 19:49:23 by yosherau         ###   ########.fr        #
+#    Updated: 2024/12/16 10:44:23 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.PHONY:		all clean fclean re $(NAME)
 
 NAME	=	libsrcs.a
 

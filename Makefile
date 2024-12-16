@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
+#    By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 18:13:12 by yosherau          #+#    #+#              #
-#    Updated: 2024/11/16 18:57:15 by yosherau         ###   ########.fr        #
+#    Updated: 2024/12/16 10:44:16 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+.PHONY:			all clean fclean re $(NAME)
 
 NAME		=	libftprintf.a
 
@@ -38,13 +40,14 @@ $(LIBSRCS):
 
 $(OBJS):		$(SRCS)
 				$(CC) $(CFLAGS) -c $^
-				$(MAKE) -C $(LIBSRCS_DIR) clean
+				
 
 clean:
 				$(RM) $(OBJS)
+				$(MAKE) -C $(LIBSRCS_DIR) clean
 
 fclean:			clean
 				$(RM) $(NAME)
 				$(MAKE) -C $(LIBSRCS_DIR) fclean
 
-re:				$(NAME) fclean
+re:				fclean all

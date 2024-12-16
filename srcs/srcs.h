@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   srcs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 23:12:01 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/15 23:14:02 by ysheraun         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:23:23 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # define LOWERCASE_HEX "0123456789abcdef"
 # define UPPERCASE_HEX "0123456789ABCDEF"
+# define STD_OUT 1
 
 char	*ft_itoa_base(long long n, char *base);
 char	*ft_itoa(long n);

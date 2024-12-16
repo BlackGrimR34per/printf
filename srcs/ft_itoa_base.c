@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
+/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 21:17:11 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/14 19:33:22 by yosherau         ###   ########.fr       */
+/*   Updated: 2024/12/16 10:24:57 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-static size_t	ft_nb_len(long long int n, int divisor)
+static size_t	ft_nb_len(long long n, int divisor)
 {
 	size_t	len;
 
