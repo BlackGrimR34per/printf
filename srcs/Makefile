@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+         #
+#    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 16:33:22 by yosherau          #+#    #+#              #
-#    Updated: 2024/12/16 10:44:23 by yosherau         ###   ########.fr        #
+#    Updated: 2025/01/30 18:15:31 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 
 NAME	=	libsrcs.a
 
-SRCS	=	ft_itoa_base.c ft_itoa.c ft_putaddress.c ft_putchar.c ft_puthex.c \
-			ft_putnbr.c ft_putstr.c ft_strlen.c ft_putposnbr.c
+SRCS	=	ft_itoa.c ft_nbrlen.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c \
+			ft_putstr.c ft_putunbr.c ft_strlen.c ft_uitoa_base.c ft_unbrlen.c
 
 OBJS	=	$(SRCS:.c=.o)
 

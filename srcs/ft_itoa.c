@@ -5,55 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 20:54:23 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/14 19:54:37 by yosherau         ###   ########.fr       */
+/*   Created: 2025/01/29 20:49:37 by ysheraun          #+#    #+#             */
+/*   Updated: 2025/01/30 18:51:09 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-static size_t	ft_nb_len(long n)
+char	*ft_itoa(int nbr)
 {
-	size_t	len;
+	char	*str;
+	size_t	nbrlen;
+	long	tempnbr;
 
-	len = 0;
-	if (n < 0)
+	nbrlen = ft_nbrlen(nbr);
+	tempnbr = nbr;
+	str = (char *)malloc(sizeof(char) * (nbrlen + 1));
+	if (!str)
+		return (NULL);
+	if (tempnbr < 0)
+		tempnbr = -tempnbr;
+	str[nbrlen--] = '\0';
+	while (tempnbr > 0)
 	{
-		len++;
-		n *= -1;
+		str[nbrlen--] = (tempnbr % 10) + 48;
+		tempnbr /= 10;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
-}
-
-char	*ft_itoa(long n)
-{
-	int		nbr_len;
-	char	*output;
-	long	nbr;
-
-	nbr = n;
-	nbr_len = ft_nb_len(nbr);
-	output = (char *)malloc(sizeof(char) * (nbr_len + 1));
-	if (!output)
-		return (0);
+	if (nbr == 0)
+		str[nbrlen] = '0';
 	if (nbr < 0)
-		nbr *= -1;
-	output[nbr_len--] = '\0';
-	while (nbr > 0)
-	{
-		output[nbr_len--] = (nbr % 10) + 48;
-		nbr /= 10;
-	}
-	if (n == 0)
-		output[nbr_len] = '0';
-	if (n < 0)
-		output[nbr_len] = '-';
-	return (output);
+		str[nbrlen] = '-';
+	return (str);
 }

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putposnbr.c                                     :+:      :+:    :+:   */
+/*   ft_nbr_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 19:48:36 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/16 10:23:59 by yosherau         ###   ########.fr       */
+/*   Created: 2025/01/29 20:55:43 by ysheraun          #+#    #+#             */
+/*   Updated: 2025/01/29 20:59:06 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-int	ft_putposnbr(unsigned int nbr)
+size_t	ft_nbrlen(int nbr)
 {
-	char	*str;
-	int		length;
+	size_t	len;
 
-	str = ft_itoa(nbr);
-	length = ft_strlen(str);
-	write(STD_OUT, str, length);
-	free (str);
-	return (length);
+	len = 0;
+	if (nbr < 0)
+	{
+		len++;
+		nbr = -nbr;
+	}
+	if (nbr == 0)
+		len++;
+	while (nbr != 0)
+	{
+		len++;
+		nbr /= 10;
+	}
+	return (len);
 }

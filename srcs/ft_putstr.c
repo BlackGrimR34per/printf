@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ysheraun <ysheraun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 23:20:58 by yosherau          #+#    #+#             */
-/*   Updated: 2024/12/16 10:24:10 by yosherau         ###   ########.fr       */
+/*   Created: 2025/01/27 15:56:43 by yosherau          #+#    #+#             */
+/*   Updated: 2025/01/29 18:16:18 by ysheraun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 int	ft_putstr(char *str)
 {
-	int	count;
-
 	if (!str)
-		return (write(STD_OUT, "(null)", 6));
-	count = ft_strlen(str);
-	if (count == 0)
-		return (0);
-	return (write(STD_OUT, str, count));
+		return (write(STD_OUT, STR_NULL, ft_strlen(STR_NULL)));
+	return (write(STD_OUT, str, ft_strlen(str)));
 }

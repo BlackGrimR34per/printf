@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_unbrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 01:39:59 by ysheraun          #+#    #+#             */
-/*   Updated: 2025/01/30 18:50:39 by yosherau         ###   ########.fr       */
+/*   Created: 2025/01/29 23:08:18 by ysheraun          #+#    #+#             */
+/*   Updated: 2025/01/30 19:08:21 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-int	ft_puthex(unsigned int nbr, int selector)
+size_t	ft_unbrlen(unsigned long nbr, size_t baselen)
 {
-	char	*str;
-	size_t	count;
+	size_t	len;
 
-	if (selector == 0)
-		str = ft_uitoa_base(nbr, BASE_16_LOWERCASE);
-	else
-		str = ft_uitoa_base(nbr, BASE_16_UPPERCASE);
-	count = ft_strlen(str);
-	ft_putstr(str);
-	free(str);
-	return (count);
+	len = 0;
+	if (nbr == 0)
+		len++;
+	while (nbr != 0)
+	{
+		len++;
+		nbr /= baselen;
+	}
+	return (len);
 }

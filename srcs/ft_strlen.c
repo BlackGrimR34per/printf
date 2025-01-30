@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 23:22:27 by yosherau          #+#    #+#             */
-/*   Updated: 2024/11/16 16:44:04 by yosherau         ###   ########.fr       */
+/*   Created: 2025/01/27 15:41:13 by yosherau          #+#    #+#             */
+/*   Updated: 2025/01/27 15:49:19 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
-	while (*str++)
+	while (str[count])
 		count++;
 	return (count);
 }

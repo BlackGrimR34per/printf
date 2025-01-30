@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yosherau <yosherau@student.42.fr>          +#+  +:+       +#+         #
+#    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 18:13:12 by yosherau          #+#    #+#              #
-#    Updated: 2024/12/16 10:44:16 by yosherau         ###   ########.fr        #
+#    Updated: 2025/01/30 18:12:06 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ $(LIBSRCS):
 
 $(OBJS):		$(SRCS)
 				$(CC) $(CFLAGS) -c $^
-				
+
 
 clean:
 				$(RM) $(OBJS)

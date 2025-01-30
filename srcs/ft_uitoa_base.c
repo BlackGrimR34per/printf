@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 01:39:59 by ysheraun          #+#    #+#             */
-/*   Updated: 2025/01/30 18:50:39 by yosherau         ###   ########.fr       */
+/*   Created: 2025/01/29 23:02:21 by ysheraun          #+#    #+#             */
+/*   Updated: 2025/01/30 19:08:56 by yosherau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "srcs.h"
 
-int	ft_puthex(unsigned int nbr, int selector)
+char	*ft_uitoa_base(unsigned long nbr, char *base)
 {
 	char	*str;
-	size_t	count;
+	int		nbrlen;
+	size_t	baselen;
 
-	if (selector == 0)
-		str = ft_uitoa_base(nbr, BASE_16_LOWERCASE);
-	else
-		str = ft_uitoa_base(nbr, BASE_16_UPPERCASE);
-	count = ft_strlen(str);
-	ft_putstr(str);
-	free(str);
-	return (count);
+	baselen = ft_strlen(base);
+	nbrlen = ft_unbrlen(nbr, baselen);
+	str = (char *)malloc(sizeof(char) * (nbrlen + 1));
+	if (!str)
+		return (NULL);
+	str[nbrlen--] = '\0';
+	if (nbr == 0)
+		str[nbrlen] = '0';
+	while (nbr > 0)
+	{
+		str[nbrlen--] = base[(nbr % baselen)];
+		nbr /= baselen;
+	}
+	return (str);
 }
