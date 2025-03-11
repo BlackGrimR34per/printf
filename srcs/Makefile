@@ -6,36 +6,39 @@
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 16:33:22 by yosherau          #+#    #+#              #
-#    Updated: 2025/01/30 18:15:31 by yosherau         ###   ########.fr        #
+#    Updated: 2025/03/11 15:30:27 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY:		all clean fclean re $(NAME)
+.PHONY:				all clean fclean re $(NAME)
 
-NAME	=	libsrcs.a
+NAME	=			libsrcs.a
 
-SRCS	=	ft_itoa.c ft_nbrlen.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c \
-			ft_putstr.c ft_putunbr.c ft_strlen.c ft_uitoa_base.c ft_unbrlen.c
+SRCS	=			ft_itoa.c ft_nbrlen.c ft_putchar.c ft_puthex.c ft_putnbr.c ft_putptr.c \
+					ft_putstr.c ft_putunbr.c ft_strlen.c ft_uitoa_base.c ft_unbrlen.c
 
-OBJS	=	$(SRCS:.c=.o)
+OBJS_DIR	=		objs
 
-CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror
+OBJS	=			$(patsubst %.c, $(OBJS_DIR)/%.o, $(SRCS))
 
-RM		=	rm -f
+CC		=			cc
+CFLAGS	=			-Wall -Wextra -Werror
 
-all:		$(NAME)
+RM		=			rm -rf
 
-$(NAME):	$(OBJS)
-			ar rcs $(NAME) $(OBJS)
+all:				$(NAME)
 
-$(OBJS):	$(SRCS)
-			$(CC) $(CFLAGS) -c $^
+$(NAME):			$(OBJS)
+					ar rcs $(NAME) $(OBJS)
+
+$(OBJS_DIR)/%.o :	%.c
+					mkdir -p $(OBJS_DIR)
+					$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			$(RM) $(OBJS)
+					$(RM) $(OBJS_DIR)
 
-fclean:		clean
-			$(RM) $(NAME)
+fclean:				clean
+					$(RM) $(NAME)
 
-re:			fclean $(NAME)
+re:					fclean $(NAME)

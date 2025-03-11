@@ -6,48 +6,53 @@
 #    By: yosherau <yosherau@student.42kl.edu.my>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/16 18:13:12 by yosherau          #+#    #+#              #
-#    Updated: 2025/01/30 18:12:06 by yosherau         ###   ########.fr        #
+#    Updated: 2025/03/11 15:32:29 by yosherau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY:			all clean fclean re $(NAME)
+.PHONY:				all clean fclean re $(NAME)
 
-NAME		=	libftprintf.a
+NAME		=		libftprintf.a
 
-CC			=	cc
-CFLAGS		=	-Wall -Wextra -Werror
+CC			=		cc
+CFLAGS		=		-Wall -Wextra -Werror
 
-RM			=	rm -f
+RM			=		rm -f
 
-SRCS		=	ft_printf.c
+SRCS		=		ft_printf.c
 
-LIBSRCS_DIR	=	./srcs
-LIBSRCS		=	$(LIBSRCS_DIR)/libsrcs.a
+LIBSRCS_DIR	=		./srcs
 
-OBJS		=	$(SRCS:.c=.o)
+LIBSRCS		=		$(LIBSRCS_DIR)/libsrcs.a
 
-all:			$(NAME)
+OBJS_DIR	=		objs
 
-$(NAME):		$(OBJS) $(LIBSRCS)
-				cp $(LIBSRCS) .
-				ar -x libsrcs.a
-				ar rcs $(NAME) $(OBJS) *.o
-				$(RM) libsrcs.a
-				$(RM) *.o
+OBJS		=		$(patsubst %.c, $(OBJS_DIR)/%.o, $(SRCS))
+
+all:				$(NAME)
+
+$(NAME):			$(OBJS) $(LIBSRCS)
+					cp $(LIBSRCS) .
+					ar -x libsrcs.a
+					ar rcs $(NAME) $(OBJS) *.o
+					$(RM) libsrcs.a
+					$(RM) *.o
 
 $(LIBSRCS):
-				$(MAKE) -C $(LIBSRCS_DIR)
+					$(MAKE) -C $(LIBSRCS_DIR)
 
-$(OBJS):		$(SRCS)
-				$(CC) $(CFLAGS) -c $^
+$(OBJS_DIR)/%.o:	%.c | $(OBJS_DIR)
+					$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJS_DIR):
+					mkdir -p $(OBJS_DIR)
 
 clean:
-				$(RM) $(OBJS)
-				$(MAKE) -C $(LIBSRCS_DIR) clean
+					$(RM) -r $(OBJS_DIR)
+					$(MAKE) -C $(LIBSRCS_DIR) clean
 
-fclean:			clean
-				$(RM) $(NAME)
-				$(MAKE) -C $(LIBSRCS_DIR) fclean
+fclean:				clean
+					$(RM) $(NAME)
+					$(MAKE) -C $(LIBSRCS_DIR) fclean
 
-re:				fclean all
+re:					fclean all
